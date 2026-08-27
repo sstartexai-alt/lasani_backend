@@ -1,0 +1,2594 @@
+{"time":"2026-08-25 17:07:33,172","level":"INFO","logger":"app","msg":{"request_id":"d45f125c-215a-42d0-b7d8-b006d5556f9e","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":0.89}}
+{"time":"2026-08-25 17:07:33,538","level":"INFO","logger":"app","msg":{"request_id":"9f3fed74-e98d-4b77-bc5d-872cf1d55875","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":113.87}}
+{"time":"2026-08-25 17:07:35,137","level":"INFO","logger":"app","msg":{"request_id":"c8be87e0-92cf-4b79-9e2d-577f3e6c00a5","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":0.89}}
+{"time":"2026-08-25 17:07:35,564","level":"INFO","logger":"app","msg":{"request_id":"c8501e2c-fa6d-4059-93e5-28c2e4b45f67","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":2.67}}
+{"time":"2026-08-25 17:08:43,079","level":"INFO","logger":"app","msg":{"request_id":"685d9180-c6a8-405c-9015-125985597a0b","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":1.53}}
+{"time":"2026-08-25 17:08:43,316","level":"INFO","logger":"app","msg":{"request_id":"ad9f9925-4059-4661-8702-15aa70d92c67","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":2.59}}
+{"time":"2026-08-25 17:08:49,497","level":"INFO","logger":"app","msg":{"request_id":"2fa1987a-964a-4673-88d9-88e37111e278","user_id":null,"method":"GET","path":"/health","status":200,"latency_ms":0.57}}
+{"time":"2026-08-25 17:10:56,906","level":"INFO","logger":"app","msg":{"request_id":"0b3374eb-4002-4061-8ad1-4e184882326a","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":1.19}}
+{"time":"2026-08-25 17:10:57,138","level":"INFO","logger":"app","msg":{"request_id":"b4bba859-cbcf-4be3-b167-22a835f853a9","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":125.81}}
+{"time":"2026-08-25 17:11:01,648","level":"INFO","logger":"app","msg":{"request_id":"a5d55665-57d1-48ed-aebe-b2d7af797739","user_id":null,"method":"GET","path":"/health","status":200,"latency_ms":0.54}}
+{"time":"2026-08-25 17:11:21,795","level":"INFO","logger":"app","msg":{"request_id":"1edd0b09-a056-4b72-9deb-300a435e61cf","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":3.16}}
+{"time":"2026-08-25 17:11:21,843","level":"ERROR","logger":"app","msg":"unhandled exception"}
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 186, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    |     with collapse_excgroups():
+    |          ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    |     raise app_exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    |     response = await func(*args, **kwargs)  # type: ignore
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    |     result = await db.execute(select(User).where(User.username == payload.username))
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    |     result = await greenlet_spawn(
+    |                    ~~~~~~~~~~~~~~^
+    |         self.sync_session.execute,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<4 lines>...
+    |         **kw,
+    |         ^^^^^
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\concurrency.py", line 99, in greenlet_spawn
+    |     _not_implemented()
+    |     ~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\concurrency.py", line 79, in _not_implemented
+    |     raise ValueError(
+    |     ...<4 lines>...
+    |     )
+    | ValueError: the greenlet library is required to use this function. No module named 'greenlet'
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+                   ~~~~~~~~~~~~~~^
+        self.sync_session.execute,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kw,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\concurrency.py", line 99, in greenlet_spawn
+    _not_implemented()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\concurrency.py", line 79, in _not_implemented
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: the greenlet library is required to use this function. No module named 'greenlet'
+{"time":"2026-08-25 17:14:34,112","level":"INFO","logger":"app","msg":{"request_id":"8c981fbd-4522-498c-a872-b29259103017","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":3.12}}
+{"time":"2026-08-25 17:14:37,841","level":"INFO","logger":"app","msg":{"request_id":"0b51c45f-7ee6-4222-87b9-b2850bd8292e","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":85.7}}
+{"time":"2026-08-25 17:14:46,866","level":"INFO","logger":"app","msg":{"request_id":"89ea42fa-fe66-4673-a9e2-ab2c673fbc0d","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":68.64}}
+{"time":"2026-08-25 17:14:46,867","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@localhost'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@localhost'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 17:18:27,911","level":"INFO","logger":"app","msg":{"request_id":"1da28248-6a0a-419a-84e9-7ffdcf3a149f","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":15.54}}
+{"time":"2026-08-25 17:18:27,912","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 17:20:47,285","level":"INFO","logger":"app","msg":{"request_id":"03ec4ed3-68a1-4c22-a6b1-22555d5fc09d","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":17.49}}
+{"time":"2026-08-25 17:20:47,286","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 17:20:54,152","level":"INFO","logger":"app","msg":{"request_id":"ed62d72d-bd50-4306-99c3-4dbca53ade40","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":0.84}}
+{"time":"2026-08-25 17:20:54,449","level":"INFO","logger":"app","msg":{"request_id":"ff27a1d6-2821-4db2-9fd5-8edd96d4f53a","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":152.11}}
+{"time":"2026-08-25 17:21:04,778","level":"INFO","logger":"app","msg":{"request_id":"a3682243-82aa-4cc3-9bb5-13fc1ebc7f54","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":2.93}}
+{"time":"2026-08-25 17:21:04,778","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 17:21:43,830","level":"INFO","logger":"app","msg":{"request_id":"dc6733a1-4ea6-4737-8aa8-9b9b3bfdb44e","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":19.63}}
+{"time":"2026-08-25 17:21:43,832","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 17:22:26,226","level":"INFO","logger":"app","msg":{"request_id":"5206af65-106b-4f9a-96ab-8ca868b66574","user_id":null,"method":"POST","path":"/api/v1/users","status":401,"latency_ms":2.69}}
+{"time":"2026-08-25 17:23:11,387","level":"INFO","logger":"app","msg":{"request_id":"8be31e7a-a444-4927-9ea4-b591909bba8a","user_id":null,"method":"GET","path":"/api/v1/users/1","status":401,"latency_ms":1.45}}
+{"time":"2026-08-25 21:22:32,651","level":"INFO","logger":"app","msg":{"request_id":"0a48b0f4-956e-4a18-ae9f-ffa5f0f46dee","user_id":null,"method":"GET","path":"/api/v1/users/1","status":401,"latency_ms":1.28}}
+{"time":"2026-08-25 21:22:42,247","level":"INFO","logger":"app","msg":{"request_id":"28cc1ee3-b2fd-4031-9181-a11c6b684582","user_id":null,"method":"POST","path":"/api/v1/users","status":401,"latency_ms":1.65}}
+{"time":"2026-08-25 21:26:46,820","level":"INFO","logger":"app","msg":{"request_id":"06058652-fa84-403e-8486-f4c1e08650b9","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":422,"latency_ms":56.76}}
+{"time":"2026-08-25 21:28:31,125","level":"INFO","logger":"app","msg":{"request_id":"c0176c09-0b1a-4a55-a774-1e930b779ae5","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":94.63}}
+{"time":"2026-08-25 21:28:31,128","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 21:29:52,267","level":"INFO","logger":"app","msg":{"request_id":"b614279b-a032-4923-976b-05f9f877467a","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":500,"latency_ms":5.28}}
+{"time":"2026-08-25 21:29:52,268","level":"ERROR","logger":"app","msg":"unhandled exception"}
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 527, in _connect
+    self._reader, self._writer = await \
+                                 ^^^^^^^
+    ...<4 lines>...
+            timeout=self.connect_timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 88, in _open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1519, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11003] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\auth.py", line 34, in login
+    result = await db.execute(select(User).where(User.username == payload.username))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 268, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\aiomysql\connection.py", line 563, in _connect
+    raise OperationalError(
+    ...<2 lines>...
+    ) from e
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '12145@rdp.htsaxon.pk'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+{"time":"2026-08-25 21:30:29,351","level":"INFO","logger":"app","msg":{"request_id":"19404d6c-88a3-41ad-9ddc-931bcff32f17","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":401,"latency_ms":802.72}}
+{"time":"2026-08-25 21:32:24,481","level":"INFO","logger":"app","msg":{"request_id":"f3f51e6b-85e3-4059-81f7-ec387e8895d1","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":401,"latency_ms":28.05}}
+{"time":"2026-08-25 21:36:59,870","level":"INFO","logger":"app","msg":{"request_id":"008a848c-7cc6-4adc-965b-cdf5d3cc413b","user_id":null,"method":"POST","path":"/api/v1/auth/login","status":200,"latency_ms":797.8}}
+{"time":"2026-08-25 21:40:17,559","level":"INFO","logger":"app","msg":{"request_id":"fde53c8e-7c7e-4778-be53-56235f96104a","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":0.86}}
+{"time":"2026-08-25 21:40:20,913","level":"INFO","logger":"app","msg":{"request_id":"556977b4-1001-4ac8-a5c3-669d377ce1b3","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":114.97}}
+{"time":"2026-08-25 21:41:16,268","level":"INFO","logger":"app","msg":{"request_id":"ef34240b-bed7-4833-a68f-39e17f1effb5","user_id":null,"method":"POST","path":"/api/v1/users","status":500,"latency_ms":2.34}}
+{"time":"2026-08-25 21:41:16,270","level":"ERROR","logger":"app","msg":"unhandled exception"}
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 186, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    |     with collapse_excgroups():
+    |          ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    |     raise app_exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 291, in app
+    |     solved_result = await solve_dependencies(
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<6 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 615, in solve_dependencies
+    |     solved_result = await solve_dependencies(
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<9 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    |     solved = await call(**solved_result.values)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\core\dependencies.py", line 23, in get_current_user
+    |     if not settings.AUTH_ENABLED:
+    |            ^^^^^^^^
+    | NameError: name 'settings' is not defined
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 615, in solve_dependencies
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\dependencies.py", line 23, in get_current_user
+    if not settings.AUTH_ENABLED:
+           ^^^^^^^^
+NameError: name 'settings' is not defined
+{"time":"2026-08-25 21:42:49,453","level":"INFO","logger":"app","msg":{"request_id":"780b72f1-0a6e-4ec0-9188-9e866ad762f0","user_id":null,"method":"POST","path":"/api/v1/users","status":500,"latency_ms":48.22}}
+{"time":"2026-08-25 21:42:49,456","level":"ERROR","logger":"app","msg":"unhandled exception"}
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 186, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    |     with collapse_excgroups():
+    |          ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    |     raise app_exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 291, in app
+    |     solved_result = await solve_dependencies(
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<6 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 615, in solve_dependencies
+    |     solved_result = await solve_dependencies(
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<9 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    |     solved = await call(**solved_result.values)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\core\dependencies.py", line 23, in get_current_user
+    |     ) -> User:
+    |     
+    | NameError: name 'settings' is not defined
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 615, in solve_dependencies
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\dependencies.py", line 23, in get_current_user
+    ) -> User:
+    
+NameError: name 'settings' is not defined
+{"time":"2026-08-25 21:42:59,747","level":"INFO","logger":"app","msg":{"request_id":"af3f2e31-57d7-4ea6-834a-dcb86435354d","user_id":null,"method":"POST","path":"/api/v1/users","status":401,"latency_ms":1.58}}
+{"time":"2026-08-25 21:43:44,340","level":"INFO","logger":"app","msg":{"request_id":"26d1e54e-77e8-41c1-b91b-a21f4a70e66f","user_id":null,"method":"POST","path":"/api/v1/users","status":401,"latency_ms":3.77}}
+{"time":"2026-08-25 21:44:28,240","level":"INFO","logger":"app","msg":{"request_id":"91412c80-8929-454b-af10-0582534f0891","user_id":null,"method":"POST","path":"/api/v1/users","status":401,"latency_ms":2.71}}
+{"time":"2026-08-25 21:44:46,965","level":"INFO","logger":"app","msg":{"request_id":"39218bba-4e27-4df0-9a3f-e1cd7d47a5e5","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":1.94}}
+{"time":"2026-08-25 21:44:47,208","level":"INFO","logger":"app","msg":{"request_id":"8c63099b-43df-4662-af8c-d72300938c72","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":101.41}}
+{"time":"2026-08-25 21:44:57,445","level":"INFO","logger":"app","msg":{"request_id":"be481802-b15c-4542-84cc-82eaf70b2192","user_id":null,"method":"POST","path":"/api/v1/users","status":201,"latency_ms":1097.27}}
+{"time":"2026-08-25 21:45:30,978","level":"INFO","logger":"app","msg":{"request_id":"f60df375-6115-44b8-8863-bc71dfedeaec","user_id":null,"method":"GET","path":"/api/v1/users","status":200,"latency_ms":115.29}}
+{"time":"2026-08-25 21:45:47,978","level":"INFO","logger":"app","msg":{"request_id":"e2e48c0d-3ccb-4399-afff-e9cae54a450b","user_id":null,"method":"GET","path":"/api/v1/users/1","status":200,"latency_ms":55.4}}
+{"time":"2026-08-25 21:45:56,026","level":"INFO","logger":"app","msg":{"request_id":"d0956d21-8748-4d17-b915-516e6689774f","user_id":null,"method":"GET","path":"/api/v1/users/2","status":200,"latency_ms":80.16}}
+{"time":"2026-08-25 21:46:02,494","level":"INFO","logger":"app","msg":{"request_id":"8a2be868-b531-4673-a5c3-489069f2340e","user_id":null,"method":"GET","path":"/api/v1/users/3","status":200,"latency_ms":69.56}}
+{"time":"2026-08-25 21:46:26,730","level":"INFO","logger":"app","msg":{"request_id":"b61a8843-e766-4ec7-9fb1-259ff7811afb","user_id":null,"method":"GET","path":"/api/v1/categories","status":200,"latency_ms":81.09}}
+{"time":"2026-08-25 21:48:11,288","level":"INFO","logger":"app","msg":{"request_id":"a9fe2248-0be9-4a37-b37a-692073674420","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":107.42}}
+{"time":"2026-08-25 21:48:25,571","level":"INFO","logger":"app","msg":{"request_id":"329b1b6f-0df2-4687-966f-dfa13d815715","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":115.85}}
+{"time":"2026-08-25 21:48:26,041","level":"INFO","logger":"app","msg":{"request_id":"25677427-b283-4701-b153-8b5f8bb1bc90","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":66.28}}
+{"time":"2026-08-25 21:48:40,395","level":"INFO","logger":"app","msg":{"request_id":"348c8849-8554-4220-96e1-3283ac69701f","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":3.71}}
+{"time":"2026-08-25 21:48:58,201","level":"INFO","logger":"app","msg":{"request_id":"ff2f9021-7e80-48a7-86cc-f2ff2c8e3613","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":40.27}}
+{"time":"2026-08-25 21:49:31,172","level":"INFO","logger":"app","msg":{"request_id":"a4770bea-f69c-4134-945b-23bb75414785","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":52.68}}
+{"time":"2026-08-25 21:49:50,074","level":"INFO","logger":"app","msg":{"request_id":"6776ba9a-0157-4d54-bf71-71d70f3d8157","user_id":null,"method":"POST","path":"/api/v1/products","status":422,"latency_ms":58.58}}
+{"time":"2026-08-25 21:51:42,657","level":"INFO","logger":"app","msg":{"request_id":"6ecaafee-9733-4cc7-ad55-1b20a7383250","user_id":null,"method":"POST","path":"/api/v1/products","status":201,"latency_ms":146.48}}
+{"time":"2026-08-26 04:24:37,656","level":"INFO","logger":"app","msg":{"request_id":"263f32cc-62a1-469d-8b07-fe7aeb633ef9","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":2.57}}
+{"time":"2026-08-26 04:24:40,848","level":"INFO","logger":"app","msg":{"request_id":"609b6b77-9e7d-42f9-b5a1-003d378ce321","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":119.16}}
+{"time":"2026-08-26 04:24:56,198","level":"INFO","logger":"app","msg":{"request_id":"6287f113-b3f7-4727-89a9-ea62f66ceb78","user_id":null,"method":"DELETE","path":"/api/v1/users/3","status":200,"latency_ms":339.67}}
+{"time":"2026-08-26 04:27:20,995","level":"INFO","logger":"app","msg":{"request_id":"b467e6aa-a170-477a-9b01-d36f08de6ba5","user_id":null,"method":"DELETE","path":"/api/v1/users/3","status":200,"latency_ms":72.47}}
+{"time":"2026-08-26 04:28:52,231","level":"INFO","logger":"app","msg":{"request_id":"2b28bfbf-7814-4ae6-8b74-9bf855e16564","user_id":null,"method":"PATCH","path":"/api/v1/users/3","status":422,"latency_ms":67.0}}
+{"time":"2026-08-26 04:29:08,617","level":"INFO","logger":"app","msg":{"request_id":"b7e70259-2ba1-4f2a-8e53-33448687da2e","user_id":null,"method":"PATCH","path":"/api/v1/users/3","status":422,"latency_ms":42.06}}
+{"time":"2026-08-26 04:29:20,338","level":"INFO","logger":"app","msg":{"request_id":"324c9e4b-fab2-4e7d-b419-47ca75d5bbb5","user_id":null,"method":"PATCH","path":"/api/v1/users/3","status":200,"latency_ms":756.26}}
+{"time":"2026-08-26 04:30:46,510","level":"INFO","logger":"app","msg":{"request_id":"0319170d-01ec-4687-8021-8a95a50a1958","user_id":null,"method":"DELETE","path":"/api/v1/users/3","status":200,"latency_ms":79.96}}
+{"time":"2026-08-26 04:33:29,047","level":"INFO","logger":"app","msg":{"request_id":"325fdb22-f65f-49b4-a4ae-d8309094686d","user_id":null,"method":"POST","path":"/api/v1/categories","status":201,"latency_ms":321.02}}
+{"time":"2026-08-26 04:34:10,356","level":"INFO","logger":"app","msg":{"request_id":"2b178b8d-06ef-42b7-8d98-3109a048efff","user_id":null,"method":"PATCH","path":"/api/v1/categories/4","status":200,"latency_ms":132.94}}
+{"time":"2026-08-26 04:34:28,943","level":"INFO","logger":"app","msg":{"request_id":"ec336453-5628-4b19-ae13-3a9a3825dd3f","user_id":null,"method":"DELETE","path":"/api/v1/categories/4","status":200,"latency_ms":81.8}}
+{"time":"2026-08-26 04:34:41,129","level":"INFO","logger":"app","msg":{"request_id":"93112729-a353-4c9e-b6b1-9b1efa67c9c3","user_id":null,"method":"POST","path":"/api/v1/categories","status":201,"latency_ms":98.49}}
+{"time":"2026-08-26 04:35:07,025","level":"INFO","logger":"app","msg":{"request_id":"4ca79e4d-e6b9-4fd5-9b64-81545640355a","user_id":null,"method":"GET","path":"/api/v1/categories","status":200,"latency_ms":124.02}}
+{"time":"2026-08-26 07:20:58,341","level":"INFO","logger":"app","msg":{"request_id":"2c1371b2-9a50-49b5-86a7-fb54406f62bd","user_id":null,"method":"GET","path":"/api/v1/products/low-stock","status":200,"latency_ms":284.4}}
+{"time":"2026-08-26 07:28:49,535","level":"INFO","logger":"app","msg":{"request_id":"5f5096eb-f695-417e-9a62-897c3beaa5d8","user_id":null,"method":"GET","path":"/api/v1/products/5","status":200,"latency_ms":19427.31}}
+{"time":"2026-08-26 07:29:16,021","level":"INFO","logger":"app","msg":{"request_id":"c2485a93-58cc-4355-a0fc-fa235bb15e24","user_id":null,"method":"PATCH","path":"/api/v1/products/5","status":404,"latency_ms":126.18}}
+{"time":"2026-08-26 07:29:30,127","level":"INFO","logger":"app","msg":{"request_id":"d658f2ca-dd96-4d05-b668-95493b94070f","user_id":null,"method":"PATCH","path":"/api/v1/products/5","status":200,"latency_ms":210.0}}
+{"time":"2026-08-26 07:30:08,350","level":"INFO","logger":"app","msg":{"request_id":"99ebfbba-174e-441f-8602-d79221e5b53a","user_id":null,"method":"DELETE","path":"/api/v1/products/5","status":200,"latency_ms":74.55}}
+{"time":"2026-08-26 07:30:31,400","level":"INFO","logger":"app","msg":{"request_id":"abe5bfe8-3101-4d2a-9a55-c3406c9adcd1","user_id":null,"method":"GET","path":"/api/v1/stock-ledger/5","status":200,"latency_ms":99.55}}
+{"time":"2026-08-26 07:30:53,939","level":"INFO","logger":"app","msg":{"request_id":"8f276fe4-37b7-4c45-bb56-c7e518edc2cf","user_id":null,"method":"GET","path":"/api/v1/stock-ledger/2","status":200,"latency_ms":88.4}}
+{"time":"2026-08-26 09:00:45,479","level":"INFO","logger":"app","msg":{"request_id":"ae2f6b51-fb88-484e-95e8-3fd579e88cd9","user_id":null,"method":"GET","path":"/api/v1/customers","status":200,"latency_ms":322.59}}
+{"time":"2026-08-26 09:01:40,833","level":"INFO","logger":"app","msg":{"request_id":"dfcde1b3-a399-4718-b5f7-ad3f1a398b18","user_id":null,"method":"POST","path":"/api/v1/customers","status":201,"latency_ms":203.52}}
+{"time":"2026-08-26 09:01:51,218","level":"INFO","logger":"app","msg":{"request_id":"806a7962-b5e3-4259-8106-d71ded87b93e","user_id":null,"method":"GET","path":"/api/v1/customers/2","status":200,"latency_ms":79.91}}
+{"time":"2026-08-26 09:01:55,966","level":"INFO","logger":"app","msg":{"request_id":"b5509c51-e556-4b9a-b958-9b6d73f5c218","user_id":null,"method":"GET","path":"/api/v1/customers/3","status":200,"latency_ms":88.52}}
+{"time":"2026-08-26 09:02:20,195","level":"INFO","logger":"app","msg":{"request_id":"10a93541-3cb6-414b-b7a8-34063feeb3f5","user_id":null,"method":"PATCH","path":"/api/v1/customers/3","status":200,"latency_ms":181.04}}
+{"time":"2026-08-26 09:02:40,269","level":"INFO","logger":"app","msg":{"request_id":"5b04b650-b0e2-43e7-82c2-44cd83ac6ac6","user_id":null,"method":"DELETE","path":"/api/v1/customers/2","status":200,"latency_ms":131.82}}
+{"time":"2026-08-26 09:03:00,349","level":"INFO","logger":"app","msg":{"request_id":"65faee36-addd-42dd-8dd6-33c15e9992c6","user_id":null,"method":"GET","path":"/api/v1/customers/1/ledger","status":200,"latency_ms":147.75}}
+{"time":"2026-08-26 09:03:55,415","level":"INFO","logger":"app","msg":{"request_id":"2b648fff-e255-42ae-990e-de1ba6c63ad6","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/1","status":200,"latency_ms":103.66}}
+{"time":"2026-08-26 09:04:07,186","level":"INFO","logger":"app","msg":{"request_id":"4d3c8af0-a951-4971-bd15-76e9803091bc","user_id":null,"method":"GET","path":"/api/v1/suppliers","status":200,"latency_ms":124.21}}
+{"time":"2026-08-26 09:04:27,639","level":"INFO","logger":"app","msg":{"request_id":"1e262581-11a9-4a9f-b04f-812cf6555b3c","user_id":null,"method":"GET","path":"/api/v1/suppliers","status":200,"latency_ms":115.77}}
+{"time":"2026-08-26 09:04:34,223","level":"INFO","logger":"app","msg":{"request_id":"54d401d1-b000-4f61-891a-8d5bb9bc5d65","user_id":null,"method":"GET","path":"/api/v1/suppliers","status":200,"latency_ms":79.93}}
+{"time":"2026-08-26 09:04:57,547","level":"INFO","logger":"app","msg":{"request_id":"4314d1be-a520-432a-b94a-9b16c288cb4f","user_id":null,"method":"POST","path":"/api/v1/suppliers","status":201,"latency_ms":198.52}}
+{"time":"2026-08-26 09:05:14,649","level":"INFO","logger":"app","msg":{"request_id":"4aa7858a-7735-4abf-b944-073b8f027bdf","user_id":null,"method":"GET","path":"/api/v1/suppliers/3","status":200,"latency_ms":421.94}}
+{"time":"2026-08-26 09:05:43,592","level":"INFO","logger":"app","msg":{"request_id":"2e288d6e-576b-499f-98d4-4ac38219f0c9","user_id":null,"method":"PATCH","path":"/api/v1/suppliers/3","status":200,"latency_ms":166.78}}
+{"time":"2026-08-26 09:05:58,468","level":"INFO","logger":"app","msg":{"request_id":"8e2e0995-4ef5-409e-bb84-549326a6f33c","user_id":null,"method":"DELETE","path":"/api/v1/suppliers/2","status":200,"latency_ms":133.31}}
+{"time":"2026-08-26 09:06:16,401","level":"INFO","logger":"app","msg":{"request_id":"fe6c91ba-c20e-44ee-bd92-f5993098c48c","user_id":null,"method":"GET","path":"/api/v1/supplier-ledger/1","status":200,"latency_ms":102.5}}
+{"time":"2026-08-26 09:07:04,281","level":"INFO","logger":"app","msg":{"request_id":"af9ad1b4-ac28-4ad7-88b0-f9bd91a4b1e6","user_id":null,"method":"GET","path":"/api/v1/purchase-invoices","status":422,"latency_ms":55.68}}
+{"time":"2026-08-26 09:09:04,400","level":"INFO","logger":"app","msg":{"request_id":"e550ebf3-72f7-4130-995c-cc8c71231d60","user_id":null,"method":"GET","path":"/api/v1/purchase-invoices","status":200,"latency_ms":94.26}}
+{"time":"2026-08-26 09:11:11,898","level":"INFO","logger":"app","msg":{"request_id":"eab23905-5a57-4c90-a40b-a237534529a3","user_id":null,"method":"POST","path":"/api/v1/purchase-invoices","status":404,"latency_ms":70.29}}
+{"time":"2026-08-26 09:13:10,738","level":"INFO","logger":"app","msg":{"request_id":"6019b10f-e10d-4e05-9855-386362c23861","user_id":null,"method":"POST","path":"/api/v1/purchase-invoices","status":201,"latency_ms":282.44}}
+{"time":"2026-08-26 09:16:27,434","level":"INFO","logger":"app","msg":{"request_id":"75cea191-d39a-4b0f-9124-7b0aaa370304","user_id":null,"method":"GET","path":"/api/v1/purchase-invoices/2","status":200,"latency_ms":561.71}}
+{"time":"2026-08-26 09:16:42,302","level":"INFO","logger":"app","msg":{"request_id":"789658b4-bdb4-4e07-9988-524fddffa45b","user_id":null,"method":"GET","path":"/api/v1/purchase-invoices/2/pdf","status":200,"latency_ms":197.26}}
+{"time":"2026-08-26 09:21:03,636","level":"INFO","logger":"app","msg":{"request_id":"d334cfdd-9076-4811-a695-c60676fc169e","user_id":null,"method":"GET","path":"/api/v1/supplier-ledger/1","status":200,"latency_ms":19406.4}}
+{"time":"2026-08-26 09:22:29,567","level":"INFO","logger":"app","msg":{"request_id":"ba4459b5-343e-4eac-9708-bbe5b6eb7813","user_id":null,"method":"GET","path":"/api/v1/stock-ledger/5","status":200,"latency_ms":108.59}}
+{"time":"2026-08-26 09:28:56,108","level":"INFO","logger":"app","msg":{"request_id":"43786556-f215-4691-b916-9da648ef4385","user_id":null,"method":"GET","path":"/api/v1/sales-invoices","status":200,"latency_ms":19524.9}}
+{"time":"2026-08-26 09:32:52,648","level":"INFO","logger":"app","msg":{"request_id":"8f1ebb83-50b9-428a-b56b-0cc6f5981e84","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":400,"latency_ms":87.16}}
+{"time":"2026-08-26 09:39:34,324","level":"INFO","logger":"app","msg":{"request_id":"d10b1962-bdc3-4143-bad2-a0fc69d28850","user_id":null,"method":"PATCH","path":"/api/v1/products/5","status":200,"latency_ms":19476.7}}
+{"time":"2026-08-26 09:46:41,374","level":"INFO","logger":"app","msg":{"request_id":"acaece09-ce43-4a61-8645-19b3e29aed49","user_id":null,"method":"POST","path":"/api/v1/purchase-invoices","status":201,"latency_ms":19501.52}}
+{"time":"2026-08-26 09:59:03,487","level":"INFO","logger":"app","msg":{"request_id":"393304a7-e819-4a37-bedd-b785182af8a2","user_id":null,"method":"POST","path":"/api/v1/purchase-invoices","status":201,"latency_ms":506.91}}
+{"time":"2026-08-26 10:00:13,545","level":"INFO","logger":"app","msg":{"request_id":"6fac6554-e435-41a1-b752-61bc740ba8fb","user_id":null,"method":"GET","path":"/api/v1/stock-ledger/5","status":200,"latency_ms":114.01}}
+{"time":"2026-08-26 10:00:53,484","level":"INFO","logger":"app","msg":{"request_id":"9ba5148f-a695-439b-a89b-cf6773367092","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":201,"latency_ms":352.55}}
+{"time":"2026-08-26 10:01:57,671","level":"INFO","logger":"app","msg":{"request_id":"56861692-84af-4970-81da-3288c030ef5f","user_id":null,"method":"GET","path":"/api/v1/sales-invoices/5","status":404,"latency_ms":38.17}}
+{"time":"2026-08-26 10:02:09,255","level":"INFO","logger":"app","msg":{"request_id":"6da85266-bb48-47ee-b15d-dc4dbb5bccca","user_id":null,"method":"GET","path":"/api/v1/sales-invoices/4","status":404,"latency_ms":37.12}}
+{"time":"2026-08-26 10:02:23,949","level":"INFO","logger":"app","msg":{"request_id":"49aefe84-19fc-465b-9939-d4a1312839b5","user_id":null,"method":"GET","path":"/api/v1/sales-invoices/3","status":200,"latency_ms":74.08}}
+{"time":"2026-08-26 10:02:36,278","level":"INFO","logger":"app","msg":{"request_id":"5a531d63-dab6-4516-8410-c9a847aa6ae1","user_id":null,"method":"GET","path":"/api/v1/sales-invoices/3/pdf","status":200,"latency_ms":128.24}}
+{"time":"2026-08-26 10:04:38,876","level":"INFO","logger":"app","msg":{"request_id":"4d2f1b1c-bd35-4660-afc3-37d5684255da","user_id":null,"method":"GET","path":"/api/v1/customer-payments","status":200,"latency_ms":84.96}}
+{"time":"2026-08-26 10:06:10,536","level":"INFO","logger":"app","msg":{"request_id":"2fe6b0cb-8f72-425f-b5b8-4ca6d8653bee","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":118.38}}
+{"time":"2026-08-26 10:06:15,345","level":"INFO","logger":"app","msg":{"request_id":"601f54a8-e458-4bdb-96d6-ed63e717143b","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/2","status":200,"latency_ms":77.05}}
+{"time":"2026-08-26 10:07:48,534","level":"INFO","logger":"app","msg":{"request_id":"5e75b0c1-56cb-478a-b0fa-d719e2c3e849","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/2","status":200,"latency_ms":100.84}}
+{"time":"2026-08-26 10:38:12,914","level":"INFO","logger":"app","msg":{"request_id":"046c0bf2-2a6e-40f9-817b-9cfc5c79a74d","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/2","status":200,"latency_ms":19436.24}}
+{"time":"2026-08-26 10:38:58,132","level":"INFO","logger":"app","msg":{"request_id":"66071e94-1ebc-491e-9795-7efb61abc3b6","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":128.53}}
+{"time":"2026-08-26 10:39:12,153","level":"INFO","logger":"app","msg":{"request_id":"c538890a-e523-4528-b446-a00dc01009e7","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":335.34}}
+{"time":"2026-08-26 10:46:11,357","level":"INFO","logger":"app","msg":{"request_id":"52473113-2cbd-417d-a95a-cea05ba4c4f0","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":19449.67}}
+{"time":"2026-08-26 10:46:31,818","level":"INFO","logger":"app","msg":{"request_id":"32f265dc-4585-4514-865f-546673e35ed2","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":415.81}}
+{"time":"2026-08-26 10:47:37,937","level":"INFO","logger":"app","msg":{"request_id":"7542097f-3662-476b-b09d-94cf29830689","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":0.61}}
+{"time":"2026-08-26 10:47:38,383","level":"INFO","logger":"app","msg":{"request_id":"1d8f1c48-a549-4348-8d86-7b4b96ec6b48","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":164.89}}
+{"time":"2026-08-26 10:47:48,033","level":"INFO","logger":"app","msg":{"request_id":"0e05bbb8-8a36-4c4d-8279-fb66575d6e21","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/2","status":200,"latency_ms":134.33}}
+{"time":"2026-08-26 10:49:01,028","level":"INFO","logger":"app","msg":{"request_id":"6d81902e-f5bb-4451-832f-597a941d50a8","user_id":null,"method":"GET","path":"/api/v1/customers/2/ledger","status":200,"latency_ms":618.99}}
+{"time":"2026-08-26 10:50:22,494","level":"INFO","logger":"app","msg":{"request_id":"8484b579-2c2b-4a97-830f-a7302f7a6210","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":404,"latency_ms":307.36}}
+{"time":"2026-08-26 10:50:53,646","level":"INFO","logger":"app","msg":{"request_id":"405f52cb-4a78-4b71-9c0b-fed9287a509a","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":400,"latency_ms":60.87}}
+{"time":"2026-08-26 10:51:30,619","level":"INFO","logger":"app","msg":{"request_id":"99fd4304-1740-495d-8870-439ab51acac3","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":400,"latency_ms":54.31}}
+{"time":"2026-08-26 10:52:54,813","level":"INFO","logger":"app","msg":{"request_id":"1db4266b-d2a3-4d67-8e57-89eb480701b7","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":201,"latency_ms":446.96}}
+{"time":"2026-08-26 10:53:24,794","level":"INFO","logger":"app","msg":{"request_id":"318530f7-c0e1-42ce-8491-95de70bdd8d0","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/4","status":404,"latency_ms":46.51}}
+{"time":"2026-08-26 10:53:35,011","level":"INFO","logger":"app","msg":{"request_id":"1767c4e5-6096-4809-874f-b5bbd0112ffb","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/1","status":200,"latency_ms":123.98}}
+{"time":"2026-08-26 10:53:54,224","level":"INFO","logger":"app","msg":{"request_id":"e2455908-dcb1-42a1-b314-2cc0b89f65bd","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":95.17}}
+{"time":"2026-08-26 10:55:17,818","level":"INFO","logger":"app","msg":{"request_id":"19aaa1b4-1f9a-446a-9f60-af5598a2a937","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":201,"latency_ms":364.89}}
+{"time":"2026-08-26 10:55:30,534","level":"INFO","logger":"app","msg":{"request_id":"04d796c0-12e3-44ce-8589-81e57312c586","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/3","status":200,"latency_ms":92.05}}
+{"time":"2026-08-26 10:56:42,123","level":"INFO","logger":"app","msg":{"request_id":"9271bc13-15ae-44da-a1df-0f62260a76e9","user_id":null,"method":"GET","path":"/api/v1/customers/1/ledger","status":200,"latency_ms":113.99}}
+{"time":"2026-08-26 10:58:07,390","level":"INFO","logger":"app","msg":{"request_id":"9b2b216d-d94e-45d2-b5e4-46529ca2467b","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/1","status":200,"latency_ms":120.84}}
+{"time":"2026-08-26 10:58:24,223","level":"INFO","logger":"app","msg":{"request_id":"e61e9f99-b107-4843-9140-9ae1b7713658","user_id":null,"method":"GET","path":"/api/v1/sales-invoices/5","status":200,"latency_ms":105.87}}
+{"time":"2026-08-26 10:59:08,347","level":"INFO","logger":"app","msg":{"request_id":"6c878557-1f1c-44ad-9052-ad9bf216afd5","user_id":null,"method":"GET","path":"/api/v1/customer-payments","status":200,"latency_ms":87.59}}
+{"time":"2026-08-26 11:02:05,891","level":"INFO","logger":"app","msg":{"request_id":"bd85da12-a32e-4a5b-a164-dbece98b4ef4","user_id":null,"method":"GET","path":"/api/v1/customer-payments","status":200,"latency_ms":161.16}}
+{"time":"2026-08-26 11:02:28,968","level":"INFO","logger":"app","msg":{"request_id":"1c1858bb-64e1-4e25-a8ce-38c32a37a73d","user_id":null,"method":"POST","path":"/api/v1/customer-payments","status":201,"latency_ms":210.85}}
+{"time":"2026-08-26 11:17:16,357","level":"INFO","logger":"app","msg":{"request_id":"0394164a-8276-4be5-84f9-44eab8ca4f12","user_id":null,"method":"POST","path":"/api/v1/sales-invoices","status":201,"latency_ms":19996.18}}
+{"time":"2026-08-26 11:19:04,631","level":"INFO","logger":"app","msg":{"request_id":"df2f6f4a-6aa5-4032-9bd1-7c8c714313e4","user_id":null,"method":"POST","path":"/api/v1/customer-payments","status":201,"latency_ms":219.92}}
+{"time":"2026-08-26 11:20:21,991","level":"INFO","logger":"app","msg":{"request_id":"02aa608f-a998-46e3-9036-cc703446f880","user_id":null,"method":"POST","path":"/api/v1/customer-payments","status":201,"latency_ms":229.26}}
+{"time":"2026-08-26 11:21:46,214","level":"INFO","logger":"app","msg":{"request_id":"890ea8d4-6214-4311-9676-d20f650c658e","user_id":null,"method":"DELETE","path":"/api/v1/suppliers/2","status":200,"latency_ms":80.52}}
+{"time":"2026-08-26 11:22:32,414","level":"INFO","logger":"app","msg":{"request_id":"79aaf863-8c2f-4fef-b1b8-1dafa7a8208d","user_id":null,"method":"GET","path":"/api/v1/customer-ledger/2","status":200,"latency_ms":101.41}}
+{"time":"2026-08-26 11:25:23,858","level":"INFO","logger":"app","msg":{"request_id":"5017257d-cb63-4777-b178-b8eacc932f2d","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":216.82}}
+{"time":"2026-08-26 11:26:51,369","level":"INFO","logger":"app","msg":{"request_id":"e328bb2d-6f4b-467a-8cbc-1387e53e6dd5","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":535.72}}
+{"time":"2026-08-26 11:27:31,366","level":"INFO","logger":"app","msg":{"request_id":"bd2d11d2-79b4-46bb-a6e3-7f814e86a35c","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":192.13}}
+{"time":"2026-08-26 11:30:30,624","level":"INFO","logger":"app","msg":{"request_id":"320a7d86-b5bc-421b-9e9c-18a0f7fc08ad","user_id":null,"method":"POST","path":"/api/v1/customer-payments","status":500,"latency_ms":438.21}}
+{"time":"2026-08-26 11:30:30,673","level":"ERROR","logger":"app","msg":"unhandled exception"}
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 186, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    |     with collapse_excgroups():
+    |          ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    |     raise app_exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\backend\app\routers\payments.py", line 75, in create_customer_payment
+    |     if payload.invoice_id is not None:
+    |        ^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\pydantic\main.py", line 892, in __getattr__
+    |     raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+    | AttributeError: 'CustomerPaymentCreate' object has no attribute 'invoice_id'
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 185, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 187, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\core\logging.py", line 60, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 163, in call_next
+    raise app_exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\backend\app\routers\payments.py", line 75, in create_customer_payment
+    if payload.invoice_id is not None:
+       ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Downloads\backend\.venv\Lib\site-packages\pydantic\main.py", line 892, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'CustomerPaymentCreate' object has no attribute 'invoice_id'
+{"time":"2026-08-26 11:30:50,224","level":"INFO","logger":"app","msg":{"request_id":"3828363d-c91c-4518-9787-450d7cf62ed9","user_id":null,"method":"POST","path":"/api/v1/customer-payments","status":201,"latency_ms":726.35}}
+{"time":"2026-08-26 11:31:24,514","level":"INFO","logger":"app","msg":{"request_id":"915061e5-3f7b-4944-830c-e92314621689","user_id":null,"method":"GET","path":"/api/v1/customers/2/ledger","status":200,"latency_ms":121.33}}
+{"time":"2026-08-26 11:32:32,379","level":"INFO","logger":"app","msg":{"request_id":"39738103-a102-42aa-9235-f022960ee795","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":0.94}}
+{"time":"2026-08-26 11:32:32,670","level":"INFO","logger":"app","msg":{"request_id":"6a839f75-fba0-42a9-bfc2-820505beae21","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":172.91}}
+{"time":"2026-08-26 11:33:20,847","level":"INFO","logger":"app","msg":{"request_id":"9f574157-7777-4871-965c-12d622a67916","user_id":null,"method":"POST","path":"/api/v1/customer-payments","status":201,"latency_ms":280.54}}
+{"time":"2026-08-26 11:33:46,871","level":"INFO","logger":"app","msg":{"request_id":"29034110-9519-4ecb-914d-7bbbe7eaf3de","user_id":null,"method":"GET","path":"/api/v1/customers/2/ledger","status":200,"latency_ms":97.69}}
+{"time":"2026-08-26 11:34:17,280","level":"INFO","logger":"app","msg":{"request_id":"bff6f3cb-658a-4ca3-956b-a45891acbaee","user_id":null,"method":"GET","path":"/api/v1/reports/today-sales","status":200,"latency_ms":71.94}}
+{"time":"2026-08-26 11:34:41,177","level":"INFO","logger":"app","msg":{"request_id":"72caf804-a14b-4f44-b48d-999df2660a52","user_id":null,"method":"GET","path":"/api/v1/dashboard/summary","status":200,"latency_ms":57.16}}
+{"time":"2026-08-26 11:38:06,007","level":"INFO","logger":"app","msg":{"request_id":"53496a1a-2998-406c-bf38-4cd0e850d549","user_id":null,"method":"POST","path":"/api/v1/purchase-invoices","status":201,"latency_ms":356.6}}
+{"time":"2026-08-26 11:43:36,996","level":"INFO","logger":"app","msg":{"request_id":"b152aa0f-e17c-4de3-bcf1-1139cf734a20","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":20611.4}}
+{"time":"2026-08-26 11:54:12,760","level":"INFO","logger":"app","msg":{"request_id":"ef462cb0-015a-4314-bba5-16116efbffdd","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":19631.1}}
+{"time":"2026-08-26 11:55:37,196","level":"INFO","logger":"app","msg":{"request_id":"f871113c-e8fd-4398-b6d7-763457fa7951","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":178.91}}
+{"time":"2026-08-26 11:56:12,268","level":"INFO","logger":"app","msg":{"request_id":"829a2715-1051-4657-8c86-72e7fd9ca2d9","user_id":null,"method":"GET","path":"/api/v1/supplier-ledger/1","status":200,"latency_ms":115.67}}
+{"time":"2026-08-26 11:57:39,475","level":"INFO","logger":"app","msg":{"request_id":"a1a46397-f235-455c-a7d7-66b85401628e","user_id":null,"method":"POST","path":"/api/v1/purchase-invoices","status":201,"latency_ms":593.31}}
+{"time":"2026-08-26 11:59:02,728","level":"INFO","logger":"app","msg":{"request_id":"fc9d69b9-5dbb-479e-87fe-c5db9bb7224f","user_id":null,"method":"POST","path":"/api/v1/supplier-payments","status":201,"latency_ms":187.83}}
+{"time":"2026-08-26 14:43:27,488","level":"INFO","logger":"app","msg":{"request_id":"f2e65808-d268-4426-a572-8f1170846103","user_id":null,"method":"POST","path":"/api/v1/users","status":400,"latency_ms":531.62}}
+{"time":"2026-08-26 14:43:37,521","level":"INFO","logger":"app","msg":{"request_id":"37ab0031-f6da-48d0-86ee-cad4dc452431","user_id":null,"method":"POST","path":"/api/v1/users","status":201,"latency_ms":1065.1}}
+{"time":"2026-08-26 20:14:37,884","level":"INFO","logger":"app","msg":{"request_id":"a0e9feac-9b7a-41f1-845b-b6e9570011ef","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":2.11}}
+{"time":"2026-08-26 20:14:39,179","level":"INFO","logger":"app","msg":{"request_id":"20ead58b-1a7e-4a9a-a533-0138e8b3fdba","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":78.0}}
+{"time":"2026-08-26 20:14:41,305","level":"INFO","logger":"app","msg":{"request_id":"9e3b5866-0d3f-4018-a474-261caaffe406","user_id":null,"method":"GET","path":"/docs","status":200,"latency_ms":1.52}}
+{"time":"2026-08-26 20:14:42,723","level":"INFO","logger":"app","msg":{"request_id":"19b9569e-a3df-480c-bd8b-d3315ab5e3ec","user_id":null,"method":"GET","path":"/openapi.json","status":200,"latency_ms":5.41}}
