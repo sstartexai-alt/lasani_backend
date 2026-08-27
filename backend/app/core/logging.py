@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 import time
 import uuid
 from logging.handlers import RotatingFileHandler
@@ -15,6 +16,8 @@ logger = logging.getLogger("app")
 def setup_logging() -> None:
     level = getattr(logging, settings.LOG_LEVEL.upper(), logging.INFO)
     logger.setLevel(level)
+
+    # Already configured → skip
     if logger.handlers:
         return
 
@@ -22,17 +25,28 @@ def setup_logging() -> None:
         '{"time":"%(asctime)s","level":"%(levelname)s","logger":"%(name)s","msg":%(message)s}'
     )
 
-    console = logging.StreamHandler()
+    # Always use console (Vercel captures stdout/stderr)
+    console = logging.StreamHandler(sys.stdout)
     console.setFormatter(fmt)
     logger.addHandler(console)
 
-    if settings.LOG_FILE:
-        os.makedirs(os.path.dirname(settings.LOG_FILE) or ".", exist_ok=True)
-        file_handler = RotatingFileHandler(
-            settings.LOG_FILE, maxBytes=5 * 1024 * 1024, backupCount=5, encoding="utf-8"
-        )
-        file_handler.setFormatter(fmt)
-        logger.addHandler(file_handler)
+    # File logging sirf local / non-serverless environment mein
+    # Vercel pe mat chalao
+    if settings.LOG_FILE and settings.ENVIRONMENT != "production":
+        try:
+            log_dir = os.path.dirname(settings.LOG_FILE) or "."
+            os.makedirs(log_dir, exist_ok=True)
+            file_handler = RotatingFileHandler(
+                settings.LOG_FILE,
+                maxBytes=5 * 1024 * 1024,
+                backupCount=5,
+                encoding="utf-8",
+            )
+            file_handler.setFormatter(fmt)
+            logger.addHandler(file_handler)
+        except Exception as e:
+            # Vercel pe fail hone do, console logging already hai
+            logger.warning(f"File logging disabled: {e}")
 
 
 def _json_escape(value: str) -> str:
@@ -45,12 +59,10 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
         request.state.request_id = request_id
         start = time.perf_counter()
 
-        # Best-effort user id extraction for audit logging (never blocks the request).
         auth = request.headers.get("authorization", "")
         if auth.lower().startswith("bearer "):
             try:
                 from app.core.security import decode_token
-
                 request.state.user_id = int(decode_token(auth[7:]).get("sub"))
             except Exception:
                 request.state.user_id = None
